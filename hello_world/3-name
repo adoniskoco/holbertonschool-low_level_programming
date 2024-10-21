@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $SCFILE cisfun
+gcc $SCFILE -o cisfun
