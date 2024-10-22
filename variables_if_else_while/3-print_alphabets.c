@@ -2,13 +2,16 @@
 
 int main(void)
 {
-char lower = 'a';
-char upper = 'A';
-while (lower <= 'z')
-putchar (lower++);
-putchar('\n');
-while (upper <= 'Z')
-putchar (upper++);
+char c;
+for (c = 'a'; c <= 'z'; c++)
+{
+putchar(c);
+}
+for (c = 'A'; c <= 'Z'; c++)
+{
+putchar(c);
+}
 putchar('\n');
 return (0);
 }
+
