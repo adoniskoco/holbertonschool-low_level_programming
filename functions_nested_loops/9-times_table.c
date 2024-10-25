@@ -1,6 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+* times_table - prints time table
+*/
+
 void times_table(void)
 {
 	int i;
