@@ -1,9 +1,3 @@
-# C Project README
-
-Welcome to the C Project! This repository contains several tasks designed to enhance your understanding of C programming, compilation, and basic scripting. Below is a concise description of each task, along with the corresponding file names.
-
-## Tasks Overview
-
 ### 0-preprocessor
 **File:** `0-preprocessor`  
 **Description:** This script runs a C file through the preprocessor and saves the result into another file. It demonstrates the preprocessing step in the compilation process.
@@ -35,7 +29,3 @@ followed by a new line. It demonstrates the use of the `printf` function for for
 ### Size is not grandeur, and territory does not make a nation
 **File:** `Size is not grandeur, and territory does not make a nation`  
 **Description:** This C program prints the size of various types on the computer it is compiled and run on. It helps in understanding data type sizes in C.
-
-## Conclusion
-
-Feel free to explore each task and their implementations. This project is a great way to practice C programming concepts and scripting for compilation processes. Happy coding!
