@@ -1,10 +1,3 @@
-# Project README
-
-## Overview
-This C project includes a series of tasks designed to strengthen your understanding of fundamental programming concepts. Below is a brief description of each task, along with the corresponding file names.
-
-### Tasks and File Descriptions
-
 1. **_putchar**  
    **Filename:** `_putchar.c`  
    Description: This program prints `_putchar`, followed by a new line.
