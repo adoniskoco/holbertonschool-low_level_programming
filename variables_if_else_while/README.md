@@ -1,10 +1,3 @@
-# Project README
-
-## Overview
-This C project contains a collection of tasks that focus on basic programming concepts such as random number generation, string manipulation, and loops. Below is a concise description of each task along with the respective file names.
-
-### Tasks and File Descriptions
-
 1. **Positive Anything is Better Than Negative Nothing**  
    **Filename:** `positive_anything.c`  
    Description: This program assigns a random number to the variable `n` each time it is executed and prints whether the number stored in `n` is positive or negative.
