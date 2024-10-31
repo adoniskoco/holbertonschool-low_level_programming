@@ -1,8 +1,10 @@
 #include "main.h"
+
 /**
-*rev_string - reverses a string.
-*@s: points to a value
+* rev_string - reverses a string
+* @str: -holds value for input
 */
+
 void rev_string(char *s)
 {
 	int count, start, end, tmp;
