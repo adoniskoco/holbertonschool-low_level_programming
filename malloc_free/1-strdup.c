@@ -1,7 +1,6 @@
 #include "main.h"
-#include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * _strdup - duplicate a string
@@ -12,22 +11,27 @@
 
 char *_strdup(char *str)
 {
-	char *tmp;
-	size_t len;
+	int size;
 	int i;
+	char *copy;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
-	len = strlen(str) + 1;
-	tmp = malloc(len);
-	if (tmp == NULL)
-	{
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	size = i + 1;
+
+	copy = malloc(size * sizeof(char));
+	if (copy == NULL)
 		return (NULL);
+
+	for (i = 0; i < size; i++)
+	{
+		copy[i] = str[i];
 	}
-	for (i = 0; i < (int) len; i++)
-		tmp[i] = str[i];
-	tmp[i] = '\0';
-	return (tmp);
+
+	return (copy);
+
 }
