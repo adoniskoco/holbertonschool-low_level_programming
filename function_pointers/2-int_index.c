@@ -2,12 +2,12 @@
 #include <stddef.h>
 
 /**
-* int_index - checks for index to return
-* @array: array of numbers
-* @size: size of the array
-* @cmp: pointer to the respective function
-* Return: i
-*/
+ * int_index -entry point,searches for an int
+ * @array: -points to the respective array
+ * @size: -holds value for output
+ * @cmp: -points to the respective func
+ * Return: (i)
+ */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -23,6 +23,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 			return (i);
 		i++;
 	}
-	return (-1);
-
+			return (-1);
 }
