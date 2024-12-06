@@ -10,6 +10,7 @@
  *@fd1: first file
  *@fd2: second file
  */
+
 void closefd(int fd1, int fd2)
 {
     if (close(fd1) == -1)
@@ -30,6 +31,7 @@ void closefd(int fd1, int fd2)
  * @argv: array of arguments
  * Return: (0);
  */
+
 int main(int argc, char *argv[])
 {
     int fdr, fdw;
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
         exit(99);
     }
 
-    // Loop to read and write chunks until the end of file
+
     while ((n = read(fdr, buffer, sizeof(buffer))) > 0)
     {
         m = write(fdw, buffer, n);
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    if (n == -1)  // In case of read error
+    if (n == -1)
     {
         dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
         exit(98);
