@@ -7,8 +7,8 @@
 
 /**
  * closefd - closes file descriptors
- * @fd1: first file
- * @fd2: second file
+ * @fd1: first file descriptor
+ * @fd2: second file descriptor
  */
 void closefd(int fd1, int fd2)
 {
@@ -28,11 +28,10 @@ void closefd(int fd1, int fd2)
  * open_files - opens the files for reading and writing
  * @src: source file name
  * @dest: destination file name
- * @fdr: file descriptor for source
- * @fdw: file descriptor for destination
- * Return: 0 on success, exits on error
+ * @fdr: pointer to file descriptor for source
+ * @fdw: pointer to file descriptor for destination
  */
-int open_files(char *src, char *dest, int *fdr, int *fdw)
+void open_files(char *src, char *dest, int *fdr, int *fdw)
 {
 	*fdr = open(src, O_RDONLY);
 	if (*fdr == -1)
@@ -47,20 +46,17 @@ int open_files(char *src, char *dest, int *fdr, int *fdw)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 		exit(99);
 	}
-
-	return (0);
 }
 
 /**
- * copy_file - copies the content of the source file to the destination file
- * @fdr: file descriptor for the source file
- * @fdw: file descriptor for the destination file
- * Return: 0 on success, exits on error
+ * copy_file - copies content from source to destination file
+ * @fdr: file descriptor for source file
+ * @fdw: file descriptor for destination file
  */
-int copy_file(int fdr, int fdw)
+void copy_file(int fdr, int fdw)
 {
 	char buffer[1024 * 8];
-	int n, m;
+	ssize_t n, m;
 
 	while ((n = read(fdr, buffer, sizeof(buffer))) > 0)
 	{
@@ -71,25 +67,23 @@ int copy_file(int fdr, int fdw)
 			exit(99);
 		}
 	}
-
 	if (n == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from source file\n");
 		exit(98);
 	}
-
-	return (0);
 }
 
 /**
  * main - Entry point for copying a file
- * @argc: number of arguments supplied to argv
+ * @argc: number of arguments
  * @argv: array of arguments
  * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
 	int fdr, fdw;
+
 
 	if (argc != 3)
 	{
